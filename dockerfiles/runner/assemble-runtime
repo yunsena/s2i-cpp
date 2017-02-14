@@ -1,4 +1,2 @@
-pwd
-ls
-ls workdir
-./workdir/server
+ls workdir/src
+./workdir/src/server
