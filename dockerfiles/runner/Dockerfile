@@ -1,4 +1,4 @@
-FROM alpine:3.3
-LABEL io.openshift.s2i.scripts-url="file:///tmp/s2i"
-RUN mkdir /tmp/s2i
-ADD ./ /tmp/s2i
+FROM centos:centos7
+LABEL io.openshift.s2i.scripts-url="image:///usr/libexec/s2i"
+COPY  ["run","/usr/libexec/s2i/"]
+
