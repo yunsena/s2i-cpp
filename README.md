@@ -1,7 +1,7 @@
 ###  Import template      
 
 
-`oc create -f templates/s2i-cpp.yaml`
+`oc create -f templates/s2i-cpp.json`
 
 ### Create app using base C++ image
 
