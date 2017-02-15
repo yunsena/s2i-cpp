@@ -1,0 +1,33 @@
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: "cpp-app" 
+spec:
+  runPolicy: "Serial" 
+  triggers: 
+    -
+      type: "GitHub"
+      github:
+        secret: "secret101"
+    - type: "Generic"
+      generic:
+        secret: "secret101"
+    -
+      type: "ImageChange"
+  source: 
+    type: "Git"
+    git:
+      uri: "https://github.com/debianmaster/s2i-cpp"
+    contextDir: "echo"  
+  strategy:
+    type: "Source"
+    sourceStrategy:
+      from:
+        kind: "ImageStreamTag"
+        name: "debianmaster/s2i-cpp:latest"
+      runtimeImage:   
+        kind: "ImageStreamTag"
+        name: "debianmaster/run-cpp:latest"
+      runtimeArtifacts: 
+        - sourcePath: "/tmp/src"
+          destinationDir: "workdir"
