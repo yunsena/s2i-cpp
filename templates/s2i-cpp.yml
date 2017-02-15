@@ -105,7 +105,7 @@
           "sourceStrategy": {
             "from": {
               "kind": "ImageStreamTag",
-              "name": "dotnet:${ASP_UPSTREAM_IMAGE_TAG}"
+              "name": "cpp:${CPP_UPSTREAM_IMAGE_TAG}"
             }
           }
         },
