@@ -1,3 +1,4 @@
+#!/bin/bash
 pwd
-ls
-/bin/sh -c /tmp/scripts/run
+echo "hello"
+/tmp/src/out
