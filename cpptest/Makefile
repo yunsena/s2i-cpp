@@ -1,27 +1,26 @@
-CC=gcc
-CFLAGS=-g
-LDFLAGS=-pedantic -Wall
-SOURCES=main.cpp lib.cpp
-OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=Program
+# Makefile for echo client and server
 
-all: $(SOURCES) $(EXECUTABLE)
-	
-$(EXECUTABLE): $(OBJECTS) 
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+CXX=			g++ $(CXXFLAGS)
 
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
+TEST=		main.o
+OBJS =			$(TEST)
+
+LIBS=
+
+CXXFLAGS= -g
+
+all:	test
+
+test:$(TEST)
+	$(CXX) -o test $(TEST) $(LIBS)
 
 clean:
-	rm  *.o
+	rm -f $(OBJS) $(OBJS:.o=.d)
 
-cleanall:
-	rm  *.o $(EXECUTABLE)
+realclean:
+	rm -f $(OBJS) $(OBJS:.o=.d) test
 
-cstart: all start
+%.o : %.cc
+	$(CXX) -c -o $@ -MD -MP ${CPPFLAGS} ${CXXFLAGS} $<
 
-start:
-	./$(EXECUTABLE)
-
-rebuild: cleanall all
+-include $(OBJS:.o=.d)
