@@ -6,7 +6,6 @@ OBJS =		$(TEST)
 
 LIBS=
 
-CXXFLAGS= -g
 
 all:	test
 
