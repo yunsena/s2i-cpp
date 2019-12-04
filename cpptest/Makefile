@@ -20,9 +20,4 @@ clean:
 realclean:
 	rm -f $(OBJS) $(OBJS:.o=.d) test
 
-%.d:	%.cc
-	$(SHELL) -ec '$(CC) -M $(CPPFLAGS) $< \
-		| sed '\''s/\($*\)\.o[ :]*/\1.o $@ : /g'\'' > $@; \
-		[ -s $@ ] || rm -f $@'
-
 -include $(OBJS:.o=.d)
