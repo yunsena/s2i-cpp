@@ -1,7 +1,6 @@
 # Makefile for echo client and server
 
 CXX=		g++ $(CXXFLAGS)
-
 TEST=		main.o
 OBJS =		$(TEST)
 
@@ -12,7 +11,7 @@ CXXFLAGS= -g
 all:	test
 
 test:$(TEST)
-	$(CXX) -o $(TEST) $(LIBS)
+	$(CXX) -o test $(TEST) $(LIBS)
 
 clean:
 	rm -f $(OBJS) $(OBJS:.o=.d)
@@ -21,6 +20,6 @@ realclean:
 	rm -f $(OBJS) $(OBJS:.o=.d) test 
 	
 %.o : %.cc
-	$(CXX) -c -o $@ -MD -MP ${CPPFLAGS} ${CXXFLAGS} $<
+	$(CXX) -c -o $@ -MD -MP ${CPPFLAGS} $<
 	
 -include $(OBJS:.o=.d)
