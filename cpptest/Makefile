@@ -1,5 +1,9 @@
-app.out: main.o
-	gcc -o app.out main.o
-
-main.o: main.c
-	gcc -c -o main.o main.c
+CC=gcc
+CFLAGS=-g -Wall
+OBJS=main.o
+TARGET=app.out
+ 
+$(TARGET): $(OBJS)
+    $(CC) -o $@ $(OBJS)
+ 
+main.o: lib.h main.c
