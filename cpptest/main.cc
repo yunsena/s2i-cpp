@@ -36,8 +36,11 @@ THE SOFTWARE.
 void setup(void);
 void loop(void);
 
-int main(){ 
-	setup();
+int main(){
+	while(1)
+	{
+		setup();
+	}
 	return 0;
 }
 
