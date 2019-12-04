@@ -1,6 +1,6 @@
 # Makefile for echo client and server
 
-CXX=		g++ $(CXXFLAGS)
+CXX=		g++ 
 TEST=		main.o
 OBJS =		$(TEST)
 
