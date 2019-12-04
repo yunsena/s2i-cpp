@@ -1,9 +1,9 @@
 # Makefile for echo client and server
 
-CXX=			g++ $(CXXFLAGS)
+CXX=		g++ $(CXXFLAGS)
 
 TEST=		main.o
-OBJS =			$(TEST)
+OBJS =		$(TEST)
 
 LIBS=
 
@@ -12,7 +12,7 @@ CXXFLAGS= -g
 all:	test
 
 test:$(TEST)
-	$(CXX) -o test $(TEST) $(LIBS)
+	$(CXX) -o $(TEST) $(LIBS)
 
 clean:
 	rm -f $(OBJS) $(OBJS:.o=.d)
