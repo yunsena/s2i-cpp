@@ -1,27 +1,5 @@
-# Makefile for echo client and server
+app.out: main.o
+	gcc -o app.out main.o
 
-CXX=		gcc $(CCFLAGS)
-TEST=		main.o
-OBJS =		$(TEST)
-
-LIBS=
-
-CCFLAGS= -g
-
-all:	test
-
-test:$(TEST)
-	$(CXX) -o test $(TEST) $(LIBS)
-
-clean:
-	rm -f $(OBJS) $(OBJS:.o=.d)
-
-realclean:
-	rm -f $(OBJS) $(OBJS:.o=.d) test 
-	
-%.d:	%.cc
-	$(SHELL) -ec '$(CC) -M $(CPPFLAGS) $< \
-		| sed '\''s/\($*\)\.o[ :]*/\1.o $@ : /g'\'' > $@; \
-		[ -s $@ ] || rm -f $@'
-	
--include $(OBJS:.o=.d)
+main.o: main.c
+	gcc -c -o main.o main.c
