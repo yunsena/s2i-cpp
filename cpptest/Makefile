@@ -10,7 +10,7 @@ LIBS=
 
 CXXFLAGS= -g
 
-all:	test
+all:	test lib
 
 test:$(TEST)
 	$(CXX) -o test $(TEST) $(LIBS)
