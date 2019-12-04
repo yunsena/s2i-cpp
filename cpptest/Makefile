@@ -1,12 +1,17 @@
-cc = gcc
+CXX		= g++
+SRCS		= $(wildcard *.cpp) $(wildcard *.c)
+OBJS		= $(SRCS:.cpp=.o)
+TARGET		= out
+LIBS		= -lprint
+LIB_DIRS	= -L./lib
+INC		= -I./include
 
-TARGET = hello
+all : $(TARGET)
+	$(CXX) -o $(TARGET) $(OBJS) $(INC) $(LIB_DIRS) $(LIBS)
 
-$(TARGET) : hello.o
-      $(cc) -o $(TARGET) hello.o
-      
-hello.o : hello.c
-      $(cc) -c hello.o hello.c
+$(TARGET) :
+	$(CXX) -c $(SRCS) $(INC) $(LIB_DIRS) $(LIBS)
 
-clean : 
-    rm -rf $(TARGET)
+clean :
+	rm -f $(TARGET)
+	rm -f *.o
