@@ -1,1 +1,2 @@
-/tmp/src/Program
+echo helloworld
+/tmp/src/main.o
