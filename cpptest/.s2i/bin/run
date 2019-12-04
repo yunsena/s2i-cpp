@@ -1,3 +1,3 @@
 pwd
 ls
-/tmp/src/out
+/bin/sh -c /tmp/scripts/run
