@@ -1,5 +1,5 @@
-CC=g++
-CFLAGS=-g -pedantic -Wall
+CC=gcc
+CFLAGS=-c -pedantic -Wall
 LDFLAGS=-pedantic -Wall
 SOURCES=main.cpp lib.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
