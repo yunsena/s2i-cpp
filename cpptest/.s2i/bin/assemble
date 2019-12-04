@@ -2,3 +2,4 @@ pwd
 ls
 cd /tmp/src
 make
+make install
