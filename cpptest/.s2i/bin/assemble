@@ -1,0 +1,4 @@
+pwd
+ls
+cd /tmp/src
+make
