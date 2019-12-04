@@ -1,8 +1,8 @@
 CC=gcc
 CFLAGS=-c -pedantic -Wall
 LDFLAGS=-pedantic -Wall
-SOURCES=main.cpp lib.c[[
-OBJECTS=$(SOURCES:.c[[=.o)
+SOURCES=main.cpp lib.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=Program
 
 all: $(SOURCES) $(EXECUTABLE)
